@@ -1,0 +1,20 @@
+objIE.navigate "https://192.168.1.32/hp/device/this.LCDispatcher?nav=hp.Usage"
+ 
+ While objIE.Busy Or objIE.readyState <> READYSTATE_COMPLETE
+ DoEvents
+ 'type HP 3015
+ Wend
+ 
+ Cells(5, 1) = objIE.document.getElementsByClassName("hpDataItemValue")(2).innerText
+ Cells(5, 2) = "P.ATENDIMENTO"
+ 
+ Cells(5, 3) = objIE.document.getElementsByClassName("hpPageText")(8).innerText
+ 
+ 
+ 'Dim texto3 As String
+ 'texto3 = objIE.document.getElementsByClassName("mainContentArea")(2).innerText
+ 'Dim vetorTextos3() As String
+ 'vetorTextos3 = Split(texto3, "")
+ 'Cells(5, 3) = (vetorTextos3(0))
+
+ 

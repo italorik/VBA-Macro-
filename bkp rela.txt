@@ -1,0 +1,392 @@
+Sub teste()
+
+Dim objIE As InternetExplorer
+ Set objIE = New InternetExplorer
+ objIE.Visible = True
+ objIE.navigate "http://192.168.1.67/main/main.html"
+ 
+ While objIE.Busy Or objIE.readyState <> READYSTATE_COMPLETE
+ 'type Brother 8890DW  Ambulatorio
+ Wend
+ Cells(1, 1) = "SERIAL"
+ Cells(1, 2) = "SETOR"
+ Cells(1, 3) = "PAG. de USO"
+
+ Dim texto1 As String
+ texto1 = objIE.document.getElementsByClassName("elemwhite")(0).innerText
+ Dim vetorTextos1() As String
+ vetorTextos1 = Split(texto1, "no. :")
+ Cells(2, 1) = (vetorTextos1(1))
+ 
+ Cells(2, 2) = "AMBULATÓRIO"
+ Cells(2, 3) = objIE.document.getElementsByClassName("elemwhite")(4).innerText
+ 
+ 
+   objIE.navigate "http://192.168.1.75/main/main.html"
+ 
+ While objIE.Busy Or objIE.readyState <> READYSTATE_COMPLETE
+ 'type Brother 8912DW  Faturamento
+ Wend
+
+ Dim texto2 As String
+ texto2 = objIE.document.getElementsByClassName("elemwhite")(0).innerText
+ Dim vetorTextos2() As String
+ vetorTextos2 = Split(texto2, "no. :")
+ Cells(3, 1) = (vetorTextos2(2))
+ 
+ Cells(3, 2) = "FATURAMENTO"
+ Cells(3, 3) = objIE.document.getElementsByClassName("elemwhite")(4).innerText
+ 
+ 
+   objIE.navigate "http://192.168.1.24/main/main.html"
+ 
+ While objIE.Busy Or objIE.readyState <> READYSTATE_COMPLETE
+ 'type Brother 8912DW  Almoxarifado
+ Wend
+
+ Dim texto3 As String
+ texto3 = objIE.document.getElementsByClassName("elemwhite")(0).innerText
+ Dim vetorTextos3() As String
+ vetorTextos3 = Split(texto3, "no. :")
+ Cells(4, 1) = (vetorTextos1(3))
+ 
+ Cells(4, 2) = "ALMOXARIFADO"
+ Cells(4, 3) = objIE.document.getElementsByClassName("elemwhite")(4).innerText
+ 
+ 
+ 
+  objIE.navigate "http://192.168.1.218/main/main.html"
+ 
+ While objIE.Busy Or objIE.readyState <> READYSTATE_COMPLETE
+ 'type Brother 8912DW  ProntoAtendimento
+ Wend
+
+ Dim texto4 As String
+ texto1 = objIE.document.getElementsByClassName("elemwhite")(0).innerText
+ Dim vetorTextos1() As String
+ vetorTextos1 = Split(texto1, "no. :")
+ Cells(5, 1) = (vetorTextos1(1))
+ 
+ Cells(5, 2) = "Pronto Atendimento"
+ Cells(5, 3) = objIE.document.getElementsByClassName("elemwhite")(4).innerText
+ 
+ 
+   objIE.navigate "http://192.168.1.169/main/main.html"
+ 
+ While objIE.Busy Or objIE.readyState <> READYSTATE_COMPLETE
+ 'type Brother 8912DW  Dpto. Pessoal
+ Wend
+
+ Dim texto5 As String
+ texto1 = objIE.document.getElementsByClassName("elemwhite")(0).innerText
+ Dim vetorTextos1() As String
+ vetorTextos1 = Split(texto1, "no. :")
+ Cells(6, 1) = (vetorTextos1(1))
+ 
+ Cells(6, 2) = "Dpto. Pessoal"
+ Cells(6, 3) = objIE.document.getElementsByClassName("elemwhite")(4).innerText
+ 
+ 
+ 
+   objIE.navigate "http://192.168.1.152/main/main.html"
+ 
+ While objIE.Busy Or objIE.readyState <> READYSTATE_COMPLETE
+ 'type Brother 8912DW  Terapias Ocupacionais
+ Wend
+
+ Dim texto6 As String
+ texto1 = objIE.document.getElementsByClassName("elemwhite")(0).innerText
+ Dim vetorTextos1() As String
+ vetorTextos1 = Split(texto1, "no. :")
+ Cells(7, 1) = (vetorTextos1(1))
+ 
+ Cells(7, 2) = "Terapias Ocupais"
+ Cells(7, 3) = objIE.document.getElementsByClassName("elemwhite")(4).innerText
+ 
+ 
+ 
+   objIE.navigate "http://192.168.1.136/main/main.html"
+ 
+ While objIE.Busy Or objIE.readyState <> READYSTATE_COMPLETE
+ 'type Brother 8912DW  Farmacia
+ Wend
+
+ Dim texto7 As String
+ texto1 = objIE.document.getElementsByClassName("elemwhite")(0).innerText
+ Dim vetorTextos1() As String
+ vetorTextos1 = Split(texto1, "no. :")
+ Cells(8, 1) = (vetorTextos1(1))
+ 
+ Cells(8, 2) = "Farmacia"
+ Cells(8, 3) = objIE.document.getElementsByClassName("elemwhite")(4).innerText
+ 
+ 
+ 
+  objIE.navigate "http://192.168.1.130/main/main.html"
+ 
+ While objIE.Busy Or objIE.readyState <> READYSTATE_COMPLETE
+ 'type Brother 8912DW  Diretoria
+ Wend
+
+ Dim texto8 As String
+ texto1 = objIE.document.getElementsByClassName("elemwhite")(0).innerText
+ Dim vetorTextos1() As String
+ vetorTextos1 = Split(texto1, "no. :")
+ Cells(9, 1) = (vetorTextos1(1))
+ 
+ Cells(9, 2) = "Diretoria"
+ Cells(9, 3) = objIE.document.getElementsByClassName("elemwhite")(4).innerText
+ 
+ 
+ 
+   objIE.navigate "http://192.168.1.106/main/main.html"
+ 
+ While objIE.Busy Or objIE.readyState <> READYSTATE_COMPLETE
+ 'type Brother 8912DW  ECT
+ Wend
+
+ Dim texto9 As String
+ texto1 = objIE.document.getElementsByClassName("elemwhite")(0).innerText
+ Dim vetorTextos1() As String
+ vetorTextos1 = Split(texto1, "no. :")
+ Cells(10, 1) = (vetorTextos1(1))
+ 
+ Cells(10, 2) = "ECT"
+ Cells(10, 3) = objIE.document.getElementsByClassName("elemwhite")(4).innerText
+ 
+ 
+ 
+ objIE.navigate "http://192.168.1.100/info_configuration.html?tab=Home&menu=DevConfig"
+ 
+ While objIE.Busy Or objIE.readyState <> READYSTATE_COMPLETE
+ 'type HP 400 M401n
+ Wend
+ 
+ Cells(11, 1) = objIE.document.getElementsByClassName("itemFont")(2).innerText
+ Cells(11, 2) = "RENOVAR 2"
+ 
+ Dim texto10 As String
+ texto3 = objIE.document.getElementsByClassName("mainContentArea")(2).innerText
+ Dim vetorTextos3() As String
+ vetorTextos3 = Split(texto3, "Total")
+ Cells(11, 3) = (vetorTextos3(0))
+
+
+
+ objIE.navigate "http://192.168.1.168/info_configuration.html?tab=Home&menu=DevConfig"
+ 
+ While objIE.Busy Or objIE.readyState <> READYSTATE_COMPLETE
+ 'type HP 400 M401n
+ Wend
+ 
+ Cells(12, 1) = objIE.document.getElementsByClassName("itemFont")(2).innerText
+ Cells(12, 2) = "PALMINHA"
+ 
+ Dim texto11 As String
+ texto3 = objIE.document.getElementsByClassName("mainContentArea")(2).innerText
+ Dim vetorTextos3() As String
+ vetorTextos3 = Split(texto3, "Total")
+ Cells(12, 3) = (vetorTextos3(0))
+
+
+
+   objIE.navigate "http://192.168.1.178/info_configuration.html?tab=Home&menu=DevConfig"
+ 
+ While objIE.Busy Or objIE.readyState <> READYSTATE_COMPLETE
+ 'type HP 400 M401n
+ Wend
+ 
+ Cells(13, 1) = objIE.document.getElementsByClassName("itemFont")(2).innerText
+ Cells(13, 2) = "HARMONIA 2"
+ 
+ Dim texto12 As String
+ texto3 = objIE.document.getElementsByClassName("mainContentArea")(2).innerText
+ Dim vetorTextos3() As String
+ vetorTextos3 = Split(texto3, "Total")
+ Cells(13, 3) = (vetorTextos3(0))
+
+
+objIE.navigate "http://192.168.1.182/info_configuration.html?tab=Home&menu=DevConfig"
+ 
+ While objIE.Busy Or objIE.readyState <> READYSTATE_COMPLETE
+ 'type HP 400 M401n
+ Wend
+ 
+ Cells(14, 1) = objIE.document.getElementsByClassName("itemFont")(2).innerText
+ Cells(14, 2) = "RENOVAR 4"
+ 
+ Dim texto13 As String
+ texto3 = objIE.document.getElementsByClassName("mainContentArea")(2).innerText
+ Dim vetorTextos3() As String
+ vetorTextos3 = Split(texto3, "Total")
+ Cells(14, 3) = (vetorTextos3(0))
+ 
+ 
+ 
+ objIE.navigate "http://192.168.1.211/info_configuration.html?tab=Home&menu=DevConfig"
+ 
+ While objIE.Busy Or objIE.readyState <> READYSTATE_COMPLETE
+ 'type HP 400 M401n
+ Wend
+ 
+ Cells(15, 1) = objIE.document.getElementsByClassName("itemFont")(2).innerText
+ Cells(15, 2) = "RENOVAR 1B"
+ 
+ Dim texto14 As String
+ texto3 = objIE.document.getElementsByClassName("mainContentArea")(2).innerText
+ Dim vetorTextos3() As String
+ vetorTextos3 = Split(texto3, "Total")
+ Cells(15, 3) = (vetorTextos3(0))
+ 
+ 
+ objIE.navigate "http://192.168.1.230/info_configuration.html?tab=Home&menu=DevConfig"
+ 
+ While objIE.Busy Or objIE.readyState <> READYSTATE_COMPLETE
+ 'type HP 400 M401n
+ Wend
+ 
+ Cells(16, 1) = objIE.document.getElementsByClassName("itemFont")(2).innerText
+ Cells(16, 2) = "RENOVAR 3"
+ 
+ Dim texto15 As String
+ texto3 = objIE.document.getElementsByClassName("mainContentArea")(2).innerText
+ Dim vetorTextos3() As String
+ vetorTextos3 = Split(texto3, "Total")
+ Cells(16, 3) = (vetorTextos3(0))
+ 
+ 
+ 
+ objIE.navigate "http://192.168.1.7/info_configuration.html?tab=Home&menu=DevConfig"
+ 
+ While objIE.Busy Or objIE.readyState <> READYSTATE_COMPLETE
+ 'type HP 400 M401n
+ Wend
+ 
+ Cells(17, 1) = objIE.document.getElementsByClassName("itemFont")(2).innerText
+ Cells(17, 2) = "HARMONIA 1"
+ 
+ Dim texto16 As String
+ texto3 = objIE.document.getElementsByClassName("mainContentArea")(2).innerText
+ Dim vetorTextos3() As String
+ vetorTextos3 = Split(texto3, "Total")
+ Cells(17, 3) = (vetorTextos3(0))
+ 
+ 
+ 
+ objIE.navigate "http://192.168.1.85/info_configuration.html?tab=Home&menu=DevConfig"
+ 
+ While objIE.Busy Or objIE.readyState <> READYSTATE_COMPLETE
+ 'type HP 400 M401n
+ Wend
+ 
+ Cells(18, 1) = objIE.document.getElementsByClassName("itemFont")(2).innerText
+ Cells(18, 2) = "SUPERVISAO"
+ 
+ Dim texto17 As String
+ texto3 = objIE.document.getElementsByClassName("mainContentArea")(2).innerText
+ Dim vetorTextos3() As String
+ vetorTextos3 = Split(texto3, "Total")
+ Cells(18, 3) = (vetorTextos3(0))
+ 
+ 
+ 
+ 
+ objIE.navigate "http://192.168.1.59/hp/device/info_configuration.htm"
+ 
+ While objIE.Busy Or objIE.readyState <> READYSTATE_COMPLETE
+ 'type HP 2055dn
+ Wend
+ Cells(19, 1) = objIE.document.getElementsByClassName("itemFont")(2).innerText
+ Cells(19, 2) = "BACKUPTI"
+ 
+ Dim texto18 As String
+ texto2 = objIE.document.getElementsByClassName("mainContentArea")(2).innerText
+ Dim vetorTextos2() As String
+ vetorTextos2 = Split(texto2, "Páginas")
+ Cells(19, 3) = (vetorTextos2(0))
+ 
+ 
+  objIE.navigate "http://192.168.1.65/hp/device/info_configuration.htm"
+ 
+ While objIE.Busy Or objIE.readyState <> READYSTATE_COMPLETE
+ 'type HP 2055dn
+ Wend
+ Cells(20, 1) = objIE.document.getElementsByClassName("itemFont")(2).innerText
+ Cells(20, 2) = "TESOURARIA"
+ 
+ Dim texto19 As String
+ texto2 = objIE.document.getElementsByClassName("mainContentArea")(2).innerText
+ Dim vetorTextos2() As String
+ vetorTextos2 = Split(texto2, "Páginas")
+ Cells(20, 3) = (vetorTextos2(0))
+ 
+ 
+ 
+ objIE.navigate "http://192.168.1.66/hp/device/info_configuration.htm"
+ 
+ While objIE.Busy Or objIE.readyState <> READYSTATE_COMPLETE
+ 'type HP 2055dn
+ Wend
+ Cells(21, 1) = objIE.document.getElementsByClassName("itemFont")(2).innerText
+ Cells(21, 2) = "MD HORIZONTAL"
+ 
+ Dim texto20 As String
+ texto2 = objIE.document.getElementsByClassName("mainContentArea")(2).innerText
+ Dim vetorTextos2() As String
+ vetorTextos2 = Split(texto2, "Páginas")
+ Cells(21, 3) = (vetorTextos2(0))
+ 
+ 
+ 
+ objIE.navigate "http://192.168.1.71/hp/device/info_configuration.htm"
+ 
+ While objIE.Busy Or objIE.readyState <> READYSTATE_COMPLETE
+ 'type HP 2055dn
+ Wend
+ Cells(22, 1) = objIE.document.getElementsByClassName("itemFont")(2).innerText
+ Cells(22, 2) = "SND"
+ 
+ Dim texto21 As String
+ texto2 = objIE.document.getElementsByClassName("mainContentArea")(2).innerText
+ Dim vetorTextos2() As String
+ vetorTextos2 = Split(texto2, "Páginas")
+ Cells(22, 3) = (vetorTextos2(0))
+ 
+ 
+ 
+ objIE.navigate "http://192.168.1.71/hp/device/info_configuration.htm"
+ 
+ While objIE.Busy Or objIE.readyState <> READYSTATE_COMPLETE
+ 'type HP 2055dn
+ Wend
+ Cells(24, 1) = objIE.document.getElementsByClassName("itemFont")(2).innerText
+ Cells(24, 2) = "SND"
+ 
+ Dim texto22 As String
+ texto2 = objIE.document.getElementsByClassName("mainContentArea")(2).innerText
+ Dim vetorTextos2() As String
+ vetorTextos2 = Split(texto2, "Páginas")
+ Cells(24, 3) = (vetorTextos2(0))
+ 
+ 
+ 
+ 
+ objIE.navigate "http://192.168.1.73/hp/device/info_configuration.htm"
+ 
+ While objIE.Busy Or objIE.readyState <> READYSTATE_COMPLETE
+ 'type HP 2055dn
+ Wend
+ Cells(25, 1) = objIE.document.getElementsByClassName("itemFont")(2).innerText
+ Cells(25, 2) = "CCIH"
+ 
+ Dim texto23 As String
+ texto2 = objIE.document.getElementsByClassName("mainContentArea")(2).innerText
+ Dim vetorTextos2() As String
+ vetorTextos2 = Split(texto2, "Páginas")
+ Cells(25, 3) = (vetorTextos2(0))
+ 
+ 
+ 
+ 
+
+End Sub
